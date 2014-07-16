@@ -41,6 +41,8 @@ let NERDTreeIgnore=['\.pyc', '\~$', '\.swo$', '\.swp$', '\.it', '\.hg', '\.svn',
 " EasyMotion {
 let g:EasyMotion_do_mapping = 0 " Disable default mappings
 
+let g:syntastic_enable_perl_checker = 1
+
 " Bi-directional find motion
 " Jump to anywhere you want with minimal keystrokes, with just one key binding.
 " `s{char}{label}`
