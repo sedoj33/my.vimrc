@@ -8,6 +8,7 @@ Bundle 'vim-scripts/svn-diff.vim'
 Bundle 'mhinz/vim-signify'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'honza/vim-snippets'
+Bundle 'godlygeek/tabular'
 
 colorscheme hybrid
 
