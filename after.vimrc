@@ -1,10 +1,8 @@
 Bundle 'vim-scripts/perl-support.vim'
 Bundle 'buffet.vim'
-"Bundle 'dhruvasagar/vim-table-mode'
-"Bundle 'Yggdroot/indentLine'
+Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'vim-scripts/bash-support.vim'
 "UnBundle 'spf13/vim-autoclose'
-Bundle 'vim-scripts/svn-diff.vim'
 Bundle 'mhinz/vim-signify'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'honza/vim-snippets'
@@ -39,6 +37,14 @@ let g:syntastic_enable_perl_checker = 1
 let g:airline_theme='molokai'
 
 let NERDTreeIgnore=['\.pyc', '\~$', '\.swo$', '\.swp$', '\.it', '\.hg', '\.svn', '\.bzr']
+
+ " indent_guides {
+if isdirectory(expand("~/.vim/bundle/vim-indent-guides/"))
+    let g:indent_guides_start_level = 2
+    let g:indent_guides_guide_size = 1
+    let g:indent_guides_enable_on_vim_startup = 1
+endif
+" }
 
 " EasyMotion {
 "let g:EasyMotion_do_mapping = 0 " Disable default mappings
