@@ -31,34 +31,34 @@ nmap <leader>bl :Bufferlist<enter>
 set mousehide               " Hide the mouse cursor while typing
 set mouse=a
 set novisualbell
+set paste
 
 let g:syntastic_enable_perl_checker = 1
 let g:airline_theme='molokai'
 
 let NERDTreeIgnore=['\.pyc', '\~$', '\.swo$', '\.swp$', '\.it', '\.hg', '\.svn', '\.bzr']
 
- " indent_guides {
-if isdirectory(expand("~/.vim/bundle/vim-indent-guides/"))
-    let g:indent_guides_start_level = 2
-    let g:indent_guides_guide_size = 1
-    let g:indent_guides_enable_on_vim_startup = 1
-endif
+" indent_guides {
+  if isdirectory(expand("~/.vim/bundle/vim-indent-guides/"))
+      let g:indent_guides_start_level = 2
+      let g:indent_guides_guide_size = 1
+      let g:indent_guides_enable_on_vim_startup = 1
+  endif
 " }
 
 " EasyMotion {
-" Jump to anywhere you want with minimal keystrokes, with just one key binding.
-" `s{char}{label}`
-nmap s <Plug>(easymotion-s)
-" or
-" `s{char}{char}{label}`
-" Need one more keystroke, but on average, it may be more comfortable.
-nmap s <Plug>(easymotion-s2)
+  " Jump to anywhere you want with minimal keystrokes, with just one key binding.
+  " `s{char}{label}`
+  nmap s <Plug>(easymotion-s)
+  " or
+  " `s{char}{char}{label}`
+  " Need one more keystroke, but on average, it may be more comfortable.
+  nmap s <Plug>(easymotion-s2)
 
-" Turn on case sensitive feature
-let g:EasyMotion_smartcase = 1
+  " Turn on case sensitive feature
+  let g:EasyMotion_smartcase = 1
 
-" JK motions: Line motions
-map <Leader>j <Plug>(easymotion-j)
-map <Leader>k <Plug>(easymotion-k)
+  " JK motions: Line motions
+  map <Leader>j <Plug>(easymotion-j)
+  map <Leader>k <Plug>(easymotion-k)
 "}
-
