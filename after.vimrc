@@ -5,8 +5,9 @@ Bundle 'vim-scripts/bash-support.vim'
 "UnBundle 'spf13/vim-autoclose'
 Bundle 'mhinz/vim-signify'
 Bundle 'Lokaltog/vim-easymotion'
-Bundle 'honza/vim-snippets'
+"Bundle 'honza/vim-snippets'
 Bundle 'godlygeek/tabular'
+Bundle 'msanders/snipmate.vim'
 
 colorscheme hybrid
 
