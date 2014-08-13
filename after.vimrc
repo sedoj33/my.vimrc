@@ -31,7 +31,6 @@ nmap <leader>bl :Bufferlist<enter>
 set mousehide               " Hide the mouse cursor while typing
 set mouse=a
 set novisualbell
-set paste
 
 let g:syntastic_enable_perl_checker = 1
 let g:airline_theme='molokai'
