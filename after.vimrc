@@ -5,9 +5,22 @@ Bundle 'vim-scripts/bash-support.vim'
 "UnBundle 'spf13/vim-autoclose'
 Bundle 'mhinz/vim-signify'
 Bundle 'Lokaltog/vim-easymotion'
-Bundle 'honza/vim-snippets'
 Bundle 'godlygeek/tabular'
 "Bundle 'msanders/snipmate.vim'
+Bundle 'honza/vim-snippets'
+Bundle 'SirVer/ultisnips'
+
+" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+   let g:UltiSnipsUsePythonVersion = 2
+
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsListSnippets="<c-tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
+
 
 colorscheme hybrid
 
@@ -32,7 +45,6 @@ nmap <leader>bl :Bufferlist<enter>
 set mousehide               " Hide the mouse cursor while typing
 set mouse=a
 set novisualbell
-set paste
 
 let g:syntastic_enable_perl_checker = 1
 let g:airline_theme='molokai'
