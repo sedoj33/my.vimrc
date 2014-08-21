@@ -48,6 +48,12 @@ let g:airline_theme='molokai'
 
 let NERDTreeIgnore=['\.pyc', '\~$', '\.swo$', '\.swp$', '\.it', '\.hg', '\.svn', '\.bzr']
 
+" copy and paste
+vmap <C-c> "+y
+vmap <C-x> "+c
+vmap <C-v> c<ESC>"+p
+imap <C-v> <ESC>"+pa
+
 " Ack {{{
 
 map <Leader>a :Ack!
