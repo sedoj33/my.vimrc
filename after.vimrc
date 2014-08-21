@@ -8,8 +8,10 @@ Bundle 'mhinz/vim-signify'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'honza/vim-snippets'
 Bundle 'godlygeek/tabular'
-Bundle 'fholgado/minibufexpl.vim'
-"Bundle 'msanders/snipmate.vim'
+Bundle 'ervandew/supertab'
+Bundle "MarcWeber/vim-addon-mw-utils"
+Bundle "tomtom/tlib_vim"
+Bundle "garbas/vim-snipmate"
 " }}}
 
 colorscheme hybrid
