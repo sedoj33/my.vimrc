@@ -13,6 +13,7 @@ Bundle "tomtom/tlib_vim"
 Bundle "garbas/vim-snipmate"
 Bundle 'honza/vim-snippets'
 Bundle 'sickill/vim-pasta'
+Bundle 'mileszs/ack.vim'
 " }}}
 
 colorscheme hybrid
