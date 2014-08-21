@@ -8,6 +8,7 @@ Bundle 'mhinz/vim-signify'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'honza/vim-snippets'
 Bundle 'godlygeek/tabular'
+Bundle 'fholgado/minibufexpl.vim'
 "Bundle 'msanders/snipmate.vim'
 " }}}
 
