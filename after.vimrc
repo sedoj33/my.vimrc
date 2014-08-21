@@ -12,8 +12,12 @@ Bundle "MarcWeber/vim-addon-mw-utils"
 Bundle "tomtom/tlib_vim"
 Bundle "garbas/vim-snipmate"
 Bundle 'honza/vim-snippets'
+" A better paste.
 Bundle 'sickill/vim-pasta'
+" A better grep.
 Bundle 'mileszs/ack.vim'
+" Searches a file for todo, fixme.
+ Bundle 'vim-scripts/TaskList.vim'
 " }}}
 
 colorscheme hybrid
@@ -43,6 +47,12 @@ let g:syntastic_enable_perl_checker = 1
 let g:airline_theme='molokai'
 
 let NERDTreeIgnore=['\.pyc', '\~$', '\.swo$', '\.swp$', '\.it', '\.hg', '\.svn', '\.bzr']
+
+" Ack {{{
+
+map <Leader>a :Ack!
+
+" }}}
 
 " indent_guides {{{
   if isdirectory(expand("~/.vim/bundle/vim-indent-guides/"))
