@@ -6,12 +6,12 @@ Bundle 'vim-scripts/bash-support.vim'
 Bundle 'Raimondi/delimitMate'
 Bundle 'mhinz/vim-signify'
 Bundle 'Lokaltog/vim-easymotion'
-Bundle 'honza/vim-snippets'
 Bundle 'godlygeek/tabular'
 Bundle 'ervandew/supertab'
 Bundle "MarcWeber/vim-addon-mw-utils"
 Bundle "tomtom/tlib_vim"
 Bundle "garbas/vim-snipmate"
+Bundle 'honza/vim-snippets'
 " }}}
 
 colorscheme hybrid
