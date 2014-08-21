@@ -17,7 +17,7 @@ Bundle 'sickill/vim-pasta'
 " A better grep.
 Bundle 'mileszs/ack.vim'
 " Searches a file for todo, fixme.
- Bundle 'vim-scripts/TaskList.vim'
+Bundle 'vim-scripts/TaskList.vim'
 " }}}
 
 colorscheme hybrid
