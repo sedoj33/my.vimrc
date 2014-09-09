@@ -1,5 +1,6 @@
 " Bundles {{{
 Bundle 'vim-scripts/perl-support.vim'
+Bundle 'vim-perl/vim-perl'
 Bundle 'buffet.vim'
 Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'vim-scripts/bash-support.vim'
@@ -43,6 +44,8 @@ set mousehide               " Hide the mouse cursor while typing
 set mouse=a
 set novisualbell
 
+let g:tagbar_sort = 0
+let b:shell = 'bash'
 let g:syntastic_enable_perl_checker = 1
 let g:airline_theme='molokai'
 
