@@ -57,6 +57,15 @@ vmap <C-x> "+c
 vmap <C-v> c<ESC>"+p
 imap <C-v> <ESC>"+pa
 
+" {{{ VimDebug
+" Предварительно необходимо установить дополнительный перловый модуль, подробрее
+" тут - https://github.com/kablamo/VimDebug, через bundle устанавливать данный
+" плагин не надо - это исходники перлового модуля.
+"
+" Добавляем runtimepath :
+set rtp+=~/.vim/vimdebug.vimrc/
+" }}}
+
 " Ack {{{
 
 map <Leader>a :Ack!
