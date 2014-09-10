@@ -19,6 +19,7 @@ Bundle 'sickill/vim-pasta'
 Bundle 'mileszs/ack.vim'
 " Searches a file for todo, fixme.
 Bundle 'vim-scripts/TaskList.vim'
+Bundle 'chriskempson/tomorrow-theme'
 " }}}
 
 colorscheme hybrid
