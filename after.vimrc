@@ -46,6 +46,9 @@ set mousehide               " Hide the mouse cursor while typing
 set mouse=a
 set novisualbell
 
+set wildmenu                    " Show list instead of just completing
+set wildmode=list:longest,full  " Command <Tab> completion, list matches, then longest common part, then all.
+
 let g:tagbar_sort = 0
 let b:shell = 'bash'
 let g:syntastic_enable_perl_checker = 1
