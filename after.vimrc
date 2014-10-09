@@ -21,6 +21,8 @@ Bundle 'mileszs/ack.vim'
 Bundle 'vim-scripts/TaskList.vim'
 Bundle 'chriskempson/tomorrow-theme'
 Bundle 'bling/vim-bufferline'
+Bundle 'mhinz/vim-startify'
+Bundle 'hobbestigrou/vimtips-fortune'
 " }}}
 
 colorscheme hybrid
