@@ -58,6 +58,9 @@ let g:airline_theme='molokai'
 
 let NERDTreeIgnore=['\.pyc', '\~$', '\.swo$', '\.swp$', '\.it', '\.hg', '\.svn', '\.bzr']
 
+let g:startify_custom_header =
+    \ map(split(system('fortune ~/.vimified/my.vimrc/vimtips-fortune/fortunes | cowsay -W 60'), '\n'), '"   ". v:val') + ['','']
+
 " copy and paste
 vmap <C-c> "+y
 vmap <C-x> "+c
