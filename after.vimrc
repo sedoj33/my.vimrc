@@ -64,6 +64,8 @@ let NERDTreeIgnore=['\.pyc', '\~$', '\.swo$', '\.swp$', '\.it', '\.hg', '\.svn',
 let g:startify_custom_header =
     \ map(split(system('fortune ~/.vimified/my.vimrc/fortunes | cowsay -W 60'), '\n'), '"   ". v:val') + ['','']
 
+autocmd BufEnter * if bufname("") !~ "^\[A-Za-z0-9\]*://" | lcd %:p:h | endif
+
 " copy and paste
 vmap <C-c> "+y
 vmap <C-x> "+c
