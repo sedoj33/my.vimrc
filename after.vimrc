@@ -22,6 +22,54 @@ let g:startify_custom_header =
 
 autocmd BufEnter * if bufname("") !~ "^\[A-Za-z0-9\]*://" | lcd %:p:h | endif
 
+" General {{{
+    Bundle 'editorconfig/editorconfig-vim'
+
+    Bundle 'rking/ag.vim'
+    nnoremap <leader>a :Ag -i<space>
+
+    Bundle 'matthias-guenther/hammer.vim'
+    nmap <leader>p :Hammer<cr>
+
+    Bundle 'tsaleh/vim-align'
+    Bundle 'tpope/vim-repeat'
+    Bundle 'tpope/vim-speeddating'
+    Bundle 'tpope/vim-surround'
+    Bundle 'tpope/vim-unimpaired'
+    Bundle 'maxbrunsfeld/vim-yankstack'
+    Bundle 'tpope/vim-eunuch'
+
+    Bundle 'scrooloose/nerdtree'
+    nmap <C-i> :NERDTreeToggle<CR>
+    " Disable the scrollbars (NERDTree)
+    set guioptions-=r
+    set guioptions-=L
+    " Keep NERDTree window fixed between multiple toggles
+    set winfixwidth
+
+
+    Bundle 'kana/vim-textobj-user'
+    Bundle 'vim-scripts/YankRing.vim'
+    let g:yankring_replace_n_pkey = '<leader>['
+    let g:yankring_replace_n_nkey = '<leader>]'
+    let g:yankring_history_dir = '~/.vim/tmp/'
+    nmap <leader>y :YRShow<cr>
+
+    Bundle 'michaeljsmith/vim-indent-object'
+    let g:indentobject_meaningful_indentation = ["haml", "sass", "python", "yaml", "markdown"]
+
+    Bundle 'Spaceghost/vim-matchit'
+    Bundle 'kien/ctrlp.vim'
+    let g:ctrlp_working_path_mode = ''
+
+    Bundle 'vim-scripts/scratch.vim'
+
+    Bundle 'troydm/easybuffer.vim'
+    nmap <leader>be :EasyBufferToggle<enter>
+
+    Bundle 'terryma/vim-multiple-cursors'
+" }}}
+
 " Copy and paste {{{
 vmap <C-c> "+y
 vmap <C-x> "+c
