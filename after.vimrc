@@ -64,9 +64,6 @@ autocmd BufEnter * if bufname("") !~ "^\[A-Za-z0-9\]*://" | lcd %:p:h | endif
 
     Bundle 'vim-scripts/scratch.vim'
 
-    Bundle 'troydm/easybuffer.vim'
-    nmap <leader>be :EasyBufferToggle<enter>
-
     Bundle 'terryma/vim-multiple-cursors'
 " }}}
 
