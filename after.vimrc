@@ -8,7 +8,6 @@ Bundle 'Raimondi/delimitMate'
 Bundle 'mhinz/vim-signify'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'godlygeek/tabular'
-Bundle 'ervandew/supertab'
 Bundle "MarcWeber/vim-addon-mw-utils"
 Bundle "tomtom/tlib_vim"
 Bundle "garbas/vim-snipmate"
@@ -22,6 +21,10 @@ Bundle 'vim-scripts/TaskList.vim'
 Bundle 'chriskempson/tomorrow-theme'
 Bundle 'bling/vim-bufferline'
 Bundle 'mhinz/vim-startify'
+" NeoCompleteCache
+Bundle 'Shougo/neocomplcache'
+Bundle 'Shougo/neosnippet'
+Bundle 'Shougo/neosnippet-snippets'
 " }}}
 
 colorscheme hybrid
