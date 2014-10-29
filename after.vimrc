@@ -2,21 +2,6 @@ colorscheme hybrid
 
 nmap <leader>bl :Bufferlist<enter>
 
-" Fugitive {{{
-  nnoremap <silent> <leader>gs :Gstatus<CR>
-  nnoremap <silent> <leader>gd :Gdiff<CR>
-  nnoremap <silent> <leader>gc :Gcommit<CR>
-  nnoremap <silent> <leader>gb :Gblame<CR>
-  nnoremap <silent> <leader>gl :Glog<CR>
-  nnoremap <silent> <leader>gp :Git push<CR>
-  nnoremap <silent> <leader>gr :Gread<CR>
-  nnoremap <silent> <leader>gw :Gwrite<CR>
-  nnoremap <silent> <leader>ge :Gedit<CR>
-  " Mnemonic _i_nteractive
-  nnoremap <silent> <leader>gi :Git add -p %<CR>
-  nnoremap <silent> <leader>gg :SignifyToggle<CR>
-" }}}
-
 set mousehide               " Hide the mouse cursor while typing
 set mouse=a
 set novisualbell
@@ -37,13 +22,29 @@ let g:startify_custom_header =
 
 autocmd BufEnter * if bufname("") !~ "^\[A-Za-z0-9\]*://" | lcd %:p:h | endif
 
-" copy and paste
+" Copy and paste {{{
 vmap <C-c> "+y
 vmap <C-x> "+c
 vmap <C-v> c<ESC>"+p
 imap <C-v> <ESC>"+pa
+" }}}
 
-" {{{ NeoCompleteCache
+" Fugitive {{{
+  nnoremap <silent> <leader>gs :Gstatus<CR>
+  nnoremap <silent> <leader>gd :Gdiff<CR>
+  nnoremap <silent> <leader>gc :Gcommit<CR>
+  nnoremap <silent> <leader>gb :Gblame<CR>
+  nnoremap <silent> <leader>gl :Glog<CR>
+  nnoremap <silent> <leader>gp :Git push<CR>
+  nnoremap <silent> <leader>gr :Gread<CR>
+  nnoremap <silent> <leader>gw :Gwrite<CR>
+  nnoremap <silent> <leader>ge :Gedit<CR>
+  " Mnemonic _i_nteractive
+  nnoremap <silent> <leader>gi :Git add -p %<CR>
+  nnoremap <silent> <leader>gg :SignifyToggle<CR>
+" }}}
+
+" NeoCompleteCache {{{
   let g:acp_enableAtStartup = 0
   let g:neocomplcache_enable_at_startup = 1
   let g:neocomplcache_enable_camel_case_completion = 1
@@ -66,60 +67,46 @@ imap <C-v> <ESC>"+pa
   endif
   let g:neocomplcache_keyword_patterns._ = '\h\w*'
 
-  " {{{ Plugin key-mappings
-      " These two lines conflict with the default digraph mapping of <C-K>
-      imap <C-k> <Plug>(neosnippet_expand_or_jump)
-      smap <C-k> <Plug>(neosnippet_expand_or_jump)
-      if exists('g:spf13_noninvasive_completion')
-          inoremap <CR> <CR>
-          " <ESC> takes you out of insert mode
-          inoremap <expr> <Esc>   pumvisible() ? "\<C-y>\<Esc>" : "\<Esc>"
-          " <CR> accepts first, then sends the <CR>
-          inoremap <expr> <CR>    pumvisible() ? "\<C-y>\<CR>" : "\<CR>"
-          " <Down> and <Up> cycle like <Tab> and <S-Tab>
-          inoremap <expr> <Down>  pumvisible() ? "\<C-n>" : "\<Down>"
-          inoremap <expr> <Up>    pumvisible() ? "\<C-p>" : "\<Up>"
-          " Jump up and down the list
-          inoremap <expr> <C-d>   pumvisible() ? "\<PageDown>\<C-p>\<C-n>" : "\<C-d>"
-          inoremap <expr> <C-u>   pumvisible() ? "\<PageUp>\<C-p>\<C-n>" : "\<C-u>"
-      else
-          imap <silent><expr><C-k> neosnippet#expandable() ?
-                      \ "\<Plug>(neosnippet_expand_or_jump)" : (pumvisible() ?
-                      \ "\<C-e>" : "\<Plug>(neosnippet_expand_or_jump)")
-          smap <TAB> <Right><Plug>(neosnippet_jump_or_expand)
+  " Plugin key-mappings {{{
+    " These two lines conflict with the default digraph mapping of <C-K>
+    imap <C-k> <Plug>(neosnippet_expand_or_jump)
+    smap <C-k> <Plug>(neosnippet_expand_or_jump)
+    imap <silent><expr><C-k> neosnippet#expandable() ?
+                \ "\<Plug>(neosnippet_expand_or_jump)" : (pumvisible() ?
+                \ "\<C-e>" : "\<Plug>(neosnippet_expand_or_jump)")
+    smap <TAB> <Right><Plug>(neosnippet_jump_or_expand)
 
-          inoremap <expr><C-g> neocomplcache#undo_completion()
-          inoremap <expr><C-l> neocomplcache#complete_common_string()
-          "inoremap <expr><CR> neocomplcache#complete_common_string()
+    inoremap <expr><C-g> neocomplcache#undo_completion()
+    inoremap <expr><C-l> neocomplcache#complete_common_string()
+    "inoremap <expr><CR> neocomplcache#complete_common_string()
 
-          function! CleverCr()
-              if pumvisible()
-                  if neosnippet#expandable()
-                      let exp = "\<Plug>(neosnippet_expand)"
-                      return exp . neocomplcache#close_popup()
-                  else
-                      return neocomplcache#close_popup()
-                  endif
-              else
-                  return "\<CR>"
-              endif
-          endfunction
+    function! CleverCr()
+        if pumvisible()
+            if neosnippet#expandable()
+                let exp = "\<Plug>(neosnippet_expand)"
+                return exp . neocomplcache#close_popup()
+            else
+                return neocomplcache#close_popup()
+            endif
+        else
+            return "\<CR>"
+        endif
+    endfunction
 
-          " <CR> close popup and save indent or expand snippet
-          imap <expr> <CR> CleverCr()
+    " <CR> close popup and save indent or expand snippet
+    imap <expr> <CR> CleverCr()
 
-          " <CR>: close popup
-          " <s-CR>: close popup and save indent.
-          inoremap <expr><s-CR> pumvisible() ? neocomplcache#close_popup()"\<CR>" : "\<CR>"
-          "inoremap <expr><CR> pumvisible() ? neocomplcache#close_popup() : "\<CR>"
+    " <CR>: close popup
+    " <s-CR>: close popup and save indent.
+    inoremap <expr><s-CR> pumvisible() ? neocomplcache#close_popup()"\<CR>" : "\<CR>"
+    "inoremap <expr><CR> pumvisible() ? neocomplcache#close_popup() : "\<CR>"
 
-          " <C-h>, <BS>: close popup and delete backword char.
-          inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
-          inoremap <expr><C-y> neocomplcache#close_popup()
-      endif
-      " <TAB>: completion.
-      inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
-      inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<TAB>"
+    " <C-h>, <BS>: close popup and delete backword char.
+    inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
+    inoremap <expr><C-y> neocomplcache#close_popup()
+    " <TAB>: completion.
+    inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+    inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<TAB>"
   " }}}
 
   " Enable omni completion.
@@ -143,7 +130,7 @@ imap <C-v> <ESC>"+pa
   let g:neocomplcache_omni_patterns.go = '\h\w*\.\?'
 " }}}
 
-" {{{ Snippets
+" Snippets {{{
    " Use honza's snippets.
    let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
 
@@ -151,11 +138,9 @@ imap <C-v> <ESC>"+pa
    let g:neosnippet#enable_snipmate_compatibility = 1
 
    " For snippet_complete marker.
-   if !exists("g:spf13_no_conceal")
        if has('conceal')
            set conceallevel=2 concealcursor=i
        endif
-   endif
 
    " Enable neosnippets when using go
    let g:go_snippet_engine = "neosnippet"
@@ -166,7 +151,7 @@ imap <C-v> <ESC>"+pa
    set completeopt-=preview
 " }}}
 
-" {{{ VimDebug
+" VimDebug {{{
 " Предварительно необходимо установить дополнительный перловый модуль, подробрее
 " тут - https://github.com/kablamo/VimDebug, через bundle устанавливать данный
 " плагин не надо - это исходники перлового модуля.
