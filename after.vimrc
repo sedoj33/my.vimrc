@@ -67,6 +67,14 @@ autocmd BufEnter * if bufname("") !~ "^\[A-Za-z0-9\]*://" | lcd %:p:h | endif
     Bundle 'terryma/vim-multiple-cursors'
 " }}}
 
+" Python {{{
+    Bundle 'klen/python-mode'
+    Bundle 'python.vim'
+    Bundle 'python_match.vim'
+    Bundle 'pythoncomplete'
+    Bundle 'jmcantrell/vim-virtualenv'
+" }}}
+
 " Copy and paste {{{
 vmap <C-c> "+y
 vmap <C-x> "+c
