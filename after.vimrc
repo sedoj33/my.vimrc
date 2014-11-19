@@ -22,6 +22,10 @@ let g:startify_custom_header =
 
 autocmd BufEnter * if bufname("") !~ "^\[A-Za-z0-9\]*://" | lcd %:p:h | endif
 
+" Перечитать конфиг, если редактировались файлы after и extra
+autocmd! BufWritePost after.vimrc source ~/.vimrc
+autocmd! BufWritePost extra.vimrc source ~/.vimrc
+
 " General {{{
     Bundle 'editorconfig/editorconfig-vim'
 
