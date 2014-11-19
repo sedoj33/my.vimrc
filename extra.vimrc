@@ -17,7 +17,7 @@ Bundle 'mileszs/ack.vim'
 " Searches a file for todo, fixme.
 Bundle 'vim-scripts/TaskList.vim'
 Bundle 'chriskempson/tomorrow-theme'
-Bundle 'bling/vim-bufferline'
+"Bundle 'bling/vim-bufferline'
 Bundle 'mhinz/vim-startify'
 " NeoCompleteCache
 Bundle 'Shougo/neocomplcache'
