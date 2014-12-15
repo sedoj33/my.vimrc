@@ -77,6 +77,45 @@ autocmd! BufWritePost extra.vimrc source ~/.vimrc
     Bundle 'python_match.vim'
     Bundle 'pythoncomplete'
     Bundle 'jmcantrell/vim-virtualenv'
+
+    autocmd BufRead *.py set makeprg=python\ -c\ \"import\ py_compile,sys;\ sys.stderr=sys.stdout;\ py_compile.compile(r'%')\"
+    autocmd BufRead *.py set efm=%C\ %.%#,%A\ \ File\ \"%f\"\\,\ line\ %l%.%#,%Z%[%^\ ]%\\@=%m
+    autocmd BufRead *.py nmap <F5> :!python %<CR>
+
+    autocmd BufRead *.py set tabstop=4
+    autocmd BufRead *.py set nowrap
+    autocmd BufRead *.py set go+=b
+
+    " Define the current compiler
+    if exists("compiler")
+      finish
+    endif
+    let compiler = "python"
+
+    " Set python as the make program and
+    setlocal makeprg=python
+    setlocal errorformat=%C\ %.%#,%A\ \ File\ \"%f\"\\,\ line\ %l%.%#,%Z%[%^\ ]%\\@=%m
+
+    " When writing Python file check the syntax
+    au! BufWriteCmd *.py call CheckPythonSyntax()
+
+    function CheckPythonSyntax()
+      " Write the current buffer to a temporary file, check the syntax and
+      " if no syntax errors are found, write the file
+      let curfile = bufname("%")
+      let tmpfile = tempname()
+      silent execute "write! ".tmpfile
+      let output = system("python -c \"__import__('py_compile').compile(r'".tmpfile."')\" 2>&1")
+      if output != ''
+        " Make sure the output specifies the correct filename
+        let output = substitute(output, fnameescape(tmpfile), fnameescape(curfile), "g")
+        echo output
+      else
+        write
+      endif
+      " Delete the temporary file when done
+      call delete(tmpfile)
+    endfunction
 " }}}
 
 " Copy and paste {{{
