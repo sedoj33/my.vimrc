@@ -13,6 +13,10 @@ set listchars=tab:›\ ,trail:•,extends:#,nbsp:. " Highlight problematic white
 let g:tagbar_sort = 0
 let b:shell = 'bash'
 let g:syntastic_enable_perl_checker = 1
+let g:syntastic_mode_map = {
+   \ "mode": "active",
+   \ "active_filetypes": ["ruby", "perl", "python", "bash", "sh"],
+   \ "passive_filetypes": ["puppet", "spec"] }
 let g:airline_theme='molokai'
 
 let NERDTreeIgnore=['\.pyc', '\~$', '\.swo$', '\.swp$', '\.it', '\.hg', '\.svn', '\.bzr']
