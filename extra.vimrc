@@ -1,7 +1,7 @@
 Bundle 'vim-scripts/perl-support.vim'
 Bundle 'vim-perl/vim-perl'
 Bundle 'buffet.vim'
-Bundle 'nathanaelkane/vim-indent-guides'
+"Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'vim-scripts/bash-support.vim'
 Bundle 'Raimondi/delimitMate'
 Bundle 'mhinz/vim-signify'
