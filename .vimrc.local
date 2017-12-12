@@ -1,0 +1,146 @@
+set number
+set relativenumber
+
+set nospell
+set novisualbell
+set wrap
+
+set guioptions-=m
+set guioptions-=T
+set guioptions-=r
+set guioptions-=L
+
+if has("gui_running")
+  set lines=60 columns=150
+  colorscheme one
+  let g:airline_theme='one'
+  if has("gui_gtk2")
+    set guifont=Ubuntu\ Mono\ 13
+  elseif has("gui_gtk3")
+    set guifont=Ubuntu\ Mono\ 13
+  elseif has("gui_macvim")
+    set guifont=Menlo\ Regular:h14
+  elseif has("gui_win32")
+    set guifont=Consolas:h11:cANSI
+  endif
+else
+  colorscheme hybrid
+  set background=dark
+  let g:airline_theme='molokai'
+endif
+
+let NERDTreeIgnore=['\.pyc', '\~$', '\.swo$', '\.swp$', '\.it', '\.hg', '\.svn', '\.bzr']
+let NERDTreeShowHidden=0
+
+" . searching {{{
+
+" clear highlight after search
+noremap <silent><Leader>/ :nohls<CR>
+" Don't jump when using * for search
+nnoremap * *<c-o>
+" Keep search matches in the middle of the window.
+nnoremap n nzzzv
+nnoremap N Nzzzv
+
+" }}}
+
+" Navigation & UI {{{
+
+" more natural movement with wrap on
+nnoremap j gj
+nnoremap k gk
+vnoremap j gj
+vnoremap k gk
+
+" Easy splitted window navigation
+noremap <C-h>  <C-w>h
+noremap <C-j>  <C-w>j
+noremap <C-k>  <C-w>k
+noremap <C-l>  <C-w>l
+
+" Easy buffer navigation
+nmap <leader>bl :Bufferlist<enter>
+
+" Splits ,v and ,h to open new splits (vertical and horizontal)
+nnoremap <leader>v <C-w>v<C-w>l
+nnoremap <leader>h <C-w>s<C-w>j
+
+" }}}
+
+autocmd BufRead,BufNewFile */nginx/*,/etc/nginx/*,/usr/local/nginx/conf/* if &ft == '' | setfiletype nginx | endif
+
+" Remove trailing whitespaces when saving
+" Wanna know more? http://vim.wikia.com/wiki/Remove_unwanted_spaces
+" If you want to remove trailing spaces when you want, so not automatically,
+" see
+" http://vim.wikia.com/wiki/Remove_unwanted_spaces#Display_or_remove_unwanted_whitespace_with_a_script.
+autocmd BufWritePre * :%s/\s\+$//e
+
+" Поддержка кирилицы {{{
+map ё `
+map й q
+map ц w
+map у e
+map к r
+map е t
+map н y
+map г u
+map ш i
+map щ o
+map з p
+map х [
+map ъ ]
+map ф a
+map ы s
+map в d
+map а f
+map п g
+map р h
+map о j
+map л k
+map д l
+map ж ;
+map э '
+map я z
+map ч x
+map с c
+map м v
+map и b
+map т n
+map ь m
+map б ,
+map ю .
+map Ё ~
+map Й Q
+map Ц W
+map У E
+map К R
+map Е T
+map Н Y
+map Г U
+map Ш I
+map Щ O
+map З P
+map Х {
+map Ъ }
+map Ф A
+map Ы S
+map В D
+map А F
+map П G
+map Р H
+map О J
+map Л K
+map Д L
+map Ж :
+map Э "
+map Я Z
+map Ч X
+map С C
+map М V
+map И B
+map Т N
+map Ь M
+map Б <
+map Ю >
+" }}}

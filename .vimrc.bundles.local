@@ -1,0 +1,17 @@
+" Gitk for vim
+Bundle 'gregsexton/gitv'
+" Colorscheme
+Bundle 'rakr/vim-one'
+" Nginx synax
+Bundle 'rhowardiv/nginx-vim-syntax'
+" YAML syntax
+Bundle 'stephpy/vim-yaml'
+" Start screen
+Bundle 'mhinz/vim-startify'
+" Buffer list
+Bundle 'vim-scripts/buffet.vim'
+" Lang support
+Bundle 'vim-scripts/bash-support.vim'
+Bundle 'vim-scripts/perl-support.vim'
+Bundle 'vim-perl/vim-perl'
+Bundle 'fatih/vim-go'
